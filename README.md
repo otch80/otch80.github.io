@@ -11,18 +11,4 @@
 
 ![jtd](https://user-images.githubusercontent.com/896475/47384541-89053c80-d6d5-11e8-98dc-dba16e192de9.gif)
 
-## Installation
-
-Add this line to your Jekyll site's Gemfile:
-
-And add this line to your Jekyll site's `_config.yml`:
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install just-the-docs
-
 어렵다 ㅠㅠ
