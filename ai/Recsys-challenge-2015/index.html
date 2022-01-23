@@ -1,0 +1,752 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>RecSys Challenge 2015: ensemble learning with categorical features 분석 - 상황정리</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="조민규">
+  
+  <meta property="article:author" content="조민규">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="상황정리">
+<meta property="og:title" content="RecSys Challenge 2015: ensemble learning with categorical features 분석">
+<meta property="og:url" content="http://localhost:4000/ai/Recsys-challenge-2015/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-01-12T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/ai/Recsys-challenge-2015/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "조민규",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          상황정리
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about">About</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpg" alt="조민규" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">조민규</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>otch80의 상황정리</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Dong-A University</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:minkk1224@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/otch80" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.instagram.com/i_min13/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+
+    
+  
+    <!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <ul>
+      <li>
+            <a href="/categories/" class="">전체(7)</a>
+      </li>
+      </ul>
+      <li>
+        <span class="nav__sub-title">개발</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+                    
+                
+            </ul>
+      </li>
+      <li>
+        <span class="nav__sub-title">연구</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/machine-learning" class="">머신러닝 (6)</a></li>
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+            </ul>
+      </li>
+      <li>
+        <span class="nav__sub-title">일상</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="RecSys Challenge 2015: ensemble learning with categorical features 분석">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-01-12T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/ai/Recsys-challenge-2015/" class="u-url" itemprop="url">RecSys Challenge 2015: ensemble learning with categorical features 분석
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p><br /></p>
+
+<p>Yandex Data Factory 소속인 Peter Romov, Evgeny Sokolov가 작성한 대회논문 RecSys Challenge 2015: ensemble learning with categorical features를 기반으로 Recsys Challenge 2015를 공부해보려 합니다.</p>
+
+<p>해당 팀은 최종 score 63,102 으로 전체 1위에 랭크하였으며, 2위 와는 약 2,000 점의 점수 차이를 나타내었습니다.</p>
+
+<p>우선 2015년에 개최된 recsys challenge에 대해 개인적으로 분석한 내용을 간략하게 설명을 해보겠습니다.</p>
+
+<p>대회는 YOOCHOOSE에서 제공한 유럽 E-commerce 의 로그로 사용자의 클릭과 구매 정보를 가지고 있습니다. <br />
+두 데이터를 통해 클릭 로그에서 사용자의 아이템 구매 여부를 예측하는 알고리즘을 개발하여, 학습에 사용되지 않은 새로운 사용자의 아이템 구매를 예측하는 것입니다.
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664086-cf68ea1a-4a57-4ec8-a073-326bafc8d316.JPG" alt="대회 설명" /></p>
+
+<p>우선 A 그룹 사용자의 click log를 분석해 모델을 학습 시킵니다. <br />
+이후 학습된 모델을 통해 B 그룹의 클릭 로그를 통해 아이템 구매를 예측 하는 방식을 간략하게 그려보았습니다.
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664088-ec26c208-cc6d-466a-bc52-d42152642023.JPG" alt="데이터셋" /></p>
+
+<p>대회에서 제공하는 데이터는 다음과 같습니다.</p>
+
+<p>yoochoose-buys.dat - 사용자가 물건을 구입할 때 발생하는 로그입니다. <br />
+yoochoose-clicks.dat - 사용자가 물건을 클릭할 때 발생하는 로그입니다. <br />
+yoochoose-test.dat - 예측해야 하는 클릭 로그입니다.</p>
+
+<p>buy와 click 파일을 통해 모델을 train 시키고, buy 로그를 활용해 정답을 확인하는 방식으로 모델을 학습시킵니다.
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664089-7190bf8a-c16e-4365-b679-8cac6bfd8bd5.JPG" alt="데이터 특징" /></p>
+
+<p>데이터의 특징을 정리해보았습니다.</p>
+<ol>
+  <li>제공된 데이터는 <strong>2014년의 4월 1일부터 9월 30일</strong> 까지 약 180일 기간의 데이터를 가지고 있습니다.</li>
+  <li>제공된 <strong>session ID</strong> 는 <strong>User ID</strong> 가 아닙니다.
+    <ul>
+      <li>특정 사용자의 행동 특성을 고려한 collaborative-filtering 기법은 적절하지 않다는 점을 알 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>클릭 파일에 기록된 세션의 수는 약 9백만명, 구매 파일에 기록된 세션의 수는 약 50만명으로, 정확한 수치는 아니지만 단순 수치상으로 봤을때 <strong>클릭 대비 아이템 구매의 비율은 5%</strong> 정도로 구성되어 있다는 사실을 알 수 있습니다.</li>
+  <li>물품의 가격은 일정하지 않고, <strong>시간의 변화에 따라 지속적으로 변동</strong>됩니다.</li>
+  <li>물품의 카테고리는 한번에 하나씩 기록되지만, <strong>다양한 카테고리</strong>를 가질 수 있습니다.
+    <ul>
+      <li>예를들어 <strong>운동화</strong> 라고 했을 때, 운동 용품으로 접근한 사용자에겐 <strong>운동</strong> 카테고리가, 패션 용품으로 접근한 사용자에겐 <strong>의류</strong> 카테고리가 붙을 수 있다는 점입니다.</li>
+      <li>카테고리는 크게 3가지로 나뉩니다.
+        <ol>
+          <li>프로모션으로 판매가 진행된 상품 혹은 고객의 특별 주문 상품</li>
+          <li>missing value</li>
+          <li>해당 아이템의 카테고리</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664091-9ba40b0a-99be-4631-83aa-929c834292ef.JPG" alt="세션과 유저의 차이" /></p>
+
+<p>왜 session ID와 user ID를 동일하게 고려하지 않는지에 대하여 간단하게 정리해보았습니다.</p>
+
+<p>User란 일반적으로 우리가 생각하는 사용자 입니다. 그렇기 떄문에 다른 사용자들과 구별되는 식별성을 가지고 있습니다. User는 Unique ID 혹은 Client ID 라고 불립니다. 해당 서비스를 사용하는 사용자의 ID는 언제나 1개일 수 밖에 없습니다.</p>
+
+<p>그에 반해 Session은 일정시간 사용자의 반응이 없으면 새로 발급되는 특징을 가지고 있습니다. 사용자가 일정 시간 이후에 사이트에 재접속 할 경우 새로운 세션이 생성됩니다. 그렇기 때문에 한 사용자는 여러 세션을 가질 수 있기 때문에 유일한 식별자로 분류할 수 없습니다.</p>
+
+<p>간략한 내용 설명은 마무리 했으니 논문 내용을 다루어 보겠습니다 <br />
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150665513-5a9cb6ad-b40e-4d3c-8d8f-01332bac6970.JPG" alt="대회 점수 측정방식 1" /></p>
+
+<p>다음은 논문에서 설명한 대회의 점수 측정 방식입니다.</p>
+
+<p>수식의 흐름대로 설명을 해보겠습니다.</p>
+
+<p>$Q(h,S_test)$ 는 참가자가 제출한 결과와 실제 정답을 비교하였을 때의 결과값입니다.</p>
+
+<p>이때 특이한 조건이 붙는데, 제출한 결과 중 <strong>세션 s가 물건을 구매할 것으로 판단되는 사용자</strong>에 대해서만 계산을 수행합니다.</p>
+
+<p>예측 결과가 positive한 부분애 대헤서만 점수를 측정하는 방식인데, 이는 모델이 세션 s가 물건을 구매하지 않는다고 판단을 한 경우 (Negative) 에 대해서는 (TN,FN) 고려하지 않는 다는 점입니다.</p>
+
+<p>왜 이런 점수 측정 방식을 채택했을 지 고민을 해보았습니다.</p>
+
+<p>대회를 개최하는 시기의 추천은 <strong>양질의 추천</strong>을 하는 것 보다는, <strong>사용자에게 많은 아이템을 추천해주고 그 중에서 건지기만 하면 된다</strong> 라는 방식의 접근이 우선시 되었던 것으로 추측하고 있습니다.</p>
+
+<p>개인적으로 무분별한 정보의 제공은 서비스 만족도를 저하시킬 수 있다고 생각하기 때문에 서비스 방향성의 변화를 알 수 있는 재밌는 점이라 생각이 됩니다.</p>
+
+<p>다시 수식으로 돌아와서, 제출한 데이터 중 1개 이상의 아이템을 구매할 것으로 생각되는 사용자에 대해서만 각 세션별 점수를 측정합니다.</p>
+
+<p>$S^b_{test}$ 는 정답지의 아이템을 구매한 세션 집합, $S_test$ 는 정답지의 모든 세션 집합을 나타냅니다.</p>
+
+<p>즉 $ S^b_{test} \over S_{tset} $는 정답 데이터 중에서 <strong>전체 세션 중 구매 세션의 비율을 나타내는 상수값</strong>임을 알 수 있습니다.</p>
+
+<p>$ isEmpty(y(s)) $ 는 구매를 할 것으로 예측한 세션이, 실제로 아이템을 구매한 내역이 존재하면 0 으로 변환하여 구매 비율을 추가 점수로 제공합니다. 하지만 실제 구매 내역이 없는 경우 1 로 변환하여 구매 비율 점수를 패널티로 부여합니다.</p>
+
+<p>$ J(y(s), h(s)) $ 는 세션 s가 실제 구매한 내역과 제출한 세션 s의 구매 내역을 비교하여 jaccard 유사도를 통해 유사한 정도를 수치화 시킵니다. <br />
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150665514-267c4ae9-8173-49c3-bd8d-70e455f31ee1.JPG" alt="대회 점수 측정방식 2" /></p>
+
+<p>수식의 앞을 자세히 살펴보면 우선 positive 라고 예측한 (세션 s가 아이템을 구매할 것으로 예측한) 내용에 대해서 시그마를 적용하면, 해당 내용이 정답인지 오답인지 $ isEmpty(y(s)) $ 에 의해 구분이 될 것입니다.</p>
+
+<p>이를 FP, TP로 표기하였을 때 다음과 같은 내용으로 단순하게 표현할 수 있습니다.
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664095-d6c8e8f4-c832-4c79-bc36-360dc45479fc.JPG" alt="대회 점수 측정방식 3" /></p>
+
+<p>결국 대회에서 측정하는 값은 다음과 같습니다.</p>
+
+<ol>
+  <li>purchase score : 세션의 구매 여부를 예측한 점수</li>
+  <li>jaccard score : 세션 s의 구매 아이템 리스트를 예측한 점수
+<br /><br /></li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664097-96f989fc-ea04-411b-8317-dcc6a04f01f5.JPG" alt="Outline" /></p>
+
+<p>해당 정보를 통해 저자들은 다음과 같은 아이디어를 제시하였습니다.</p>
+
+<ol>
+  <li>이 세션이 물건을 살 의향이 있는지 예측하는 모델 제작</li>
+  <li>만약 물건을 살 의향이 있는 세션이라면, 어떤 물건을 살 것인지 예측하는 모델 제작</li>
+</ol>
+
+<p>각 정보에 해당하는 모델을 각기 수행시키는 것으로 방향성을 설정하였습니다.
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664098-55d1fe9d-b57d-448d-a281-9b1f2bd88144.JPG" alt="예측방식" /></p>
+
+<ul>
+  <li>모델의 출력 결과는 확률값으로 출력합니다.</li>
+</ul>
+
+<ol>
+  <li>해당 세션이 물건을 살 확률은 얼마나 되는가?</li>
+  <li>물건을 살 확률이 $ \alpha_{p} $ 보다 작으면 0 반환, $ \alpha_{p} $ 이상이면 세션 정보를 다음 모델로 넘겨준다</li>
+  <li>해당 세션이 클릭한 물건을 살 확률은 얼마나 되는가?</li>
+  <li>클릭한 물건을 살 확률이 $ \alpha_{i} $ 보다 크면 결과값 1, 아니면 0 반환</li>
+</ol>
+
+<p>그렇기 때문에 논문의 저자들은 결과를 구분하기 위한 $ \alpha_{p}, \alpha_{i} $ 인 $threshold$ 를 구하는 과정이 중요하다고 설명하고 있습니다.
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664099-f080a4b7-e127-48f4-9002-8852c1e00576.JPG" alt="point" /></p>
+
+<p>데이터 분석에 앞서 분석 방향에 대한 간략한 정보를 언급하였습니다.</p>
+
+<ul>
+  <li>Train / Test 데이터셋 모두 동일한 시간대를 가지기 때문에 time feature 를 활용할 수 있다</li>
+</ul>
+
+<p>일반적으로 결과를 예측하는 방식은 과거의 데이터에서 모델이 feature를 학습하고, 미래의 데이터에 대해 예측하는 방식입니다.</p>
+
+<p>하지만 이번 데이터셋의 경우는 train 과 test 모두 동일한 시간의 범위를 가지고 있기 때문에, 특정 시간에 발생한 이벤트를 동일하게 적용할 수 있는 상황입니다.</p>
+
+<p>예를 들어 8월에 있었던 여름 제품 세일과 같은 특정 시간만의 이벤트를 예측에도 동일하게 적용할 수 있다는 얘기가 됩니다.</p>
+
+<p>해당 접근 방식은 좋은 방식으로 생각이 되지만, 이런 데이터셋을 제공한 대회가 어떤 결과를 얻고 싶어서 이런 특성을 가진 데이터를 제공하였는지는 의문이 듭니다.</p>
+
+<p>추가로 저자들은 제품의 가격과, 구매 수량은 학습에 사용하지 않았다고 합니다.</p>
+
+<p>상품을 구매함에 있어서 제품의 가격은 분명 주요한 요인이 될 것인데 이러한 부분을 배제한 이유도 궁금하지만 성능에서 이미 증명을 하였기 떄문에 크게 생각하지는 않기로 하였습니다. <br />
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664100-34db226e-6bc2-46fa-9163-02696d3a22f4.JPG" alt="EDA 1" /></p>
+
+<p>데이터를 살펴보면 시간에 따른 구매율이 존재하는 것을 확인할 수 있습니다.</p>
+
+<p>그리고 상대적으로 심야시간 보다는 사람들이 많이 활동하는 시간에 구매율도 높은 모습을 볼 수 있었습니다.</p>
+
+<p>동시에 근무를 하는 주중의 구매율 보다 주말에 사람들의 쇼핑 활동이 많은 것을 알 수 있었습니다.</p>
+
+<p>이때 중요한 부분은 특가 프로모션이나 공휴일과 같은 단순 데이터에서는 나타나지 않는 시간적 특성이 추가로 존재하기 때문에 시간 feature가 곧 정답은 아님을 파악해야 합니다. <br />
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664101-96de65ba-6dfb-4448-9192-0e22a49fa5d2.JPG" alt="EDA 2" /></p>
+
+<p>클릭의 관점에서 접근한 분석 내용입니다.</p>
+
+<p>당연히 세션의 누적 클릭 수가 높을수록, 해당 세션은 아이템 구매 의사가 있는 것으로 파악을 할 수 있습니다.</p>
+
+<p>살 물건이 없어서 가볍게 둘러보는 사람에 비해, 물건을 비교하고 어떤 물건을 살 지 고민하는 사람의 클릭수가 많을 수 밖에 없다는 점이 데이터에 나타나고 있습니다.</p>
+
+<p>하지만 클릭수가 많을 수록 반드시 구매율이 높은것은 아님을 보여주기 위해 인기항목에 대한 분석도 수행하였습니다.</p>
+
+<p>전체 학습 데이터에서 클릭 수가 많은 상위 아이템의 구매율을 살펴보았을 때, 각 항목별로 구매율에 차이가 크게 나타남을 알 수 있습니다.</p>
+
+<p>이러한 데이터를 바탕으로 클릭 수가 많을수록 구매율이 항상 높은 것은 아님을 알 수 있습니다. <br />
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664102-3bfe717c-3a13-4dcf-a3fa-50f0e281459d.JPG" alt="feature extract" /></p>
+
+<p>모델 학습을 위해 추출한 feature 입니다.</p>
+
+<p>우선 purchase score를 높이기 위한 세션의 아이템 구매 의사 예측을 하기위한 feature와,</p>
+
+<p>jaccard score를 높이기 위한 세션의 구매 아이템 예측을 위한 feature로 구분하였습니다.</p>
+
+<p>자세한 내용은 표를 참고해주시면 감사하겠습니다.</p>
+
+<p>전체적으로 시간에 대한 분석을 위주로 분석을 수행하였다는 점을 알 수 있었습니다.</p>
+
+<p>여기서 특이한 점을 알 수 있었는데, 시간 데이터를 굉장히 다양한 방법으로 분리를 시켰다는 점입니다.</p>
+
+<p>개인적으로 아무리 많은 로그가 남는 사이트라고 하더라도 몇 시부터 몇 시까지 이벤트를 진행한다 정도만 알고 있어도 많은 도움이 될 것으로 생각을 했습니다.</p>
+
+<p>그에 반해 저자들은 초단위 까지 나눠서 모델에 학습을 시켰는데, 이런 과정이 정말로 모델 예측이 필요한 데이터를 추출하는 과정인지에 대한 검증도 추가해주었으면 하는 생각이 들었습니다.</p>
+
+<p>물론 제가 코드를 실행시키며 상관관계 분석을 할 수 있지만, 저자들이 사용한 칼럼의 수는 400개로 제 컴퓨팅 환경에서는 불가능한 상황이기 때문에 안타까운 마음이 들 뿐입니다. <br />
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664103-6c88ad3e-fcd9-4dc1-9378-7e9cbb2a5e26.JPG" alt="사용 모델" /></p>
+
+<p>방대한 데이터를 처리하기 위한 모델을 선별하는 과정을 수행하였다고 합니다.</p>
+
+<p>2015년이면 그렇게 다양한 모델이 존재하지는 않았을 것으로 생각이 됩니다.</p>
+
+<p>저자들은 모델 선별에 고려사항으로 다음과 같은 내용을 언급하였습니다.</p>
+
+<ul>
+  <li>여러 수준의 범주형 feature를 지원하는 ML</li>
+</ul>
+
+<p>XGBoost, Ensemble, GBM 등의 모델은 범주형 feature를 직접적으로 지원하지 않기 때문에 MatrixNet 모델을 활용하였다고 설명하였습니다.</p>
+
+<p>MatrixNet 모델은 2009년에 개발된 Gradient Boosting 라이브러리로, 트리 기반의 모델입니다.</p>
+
+<p>저자 Andrey Gulin가 발표한 2012년 Matrixnet Technical report에 따르면 해당 모델은</p>
+
+<blockquote>
+  <p>[Matrixnet Technical report 내용 중]</p>
+  <ul>
+    <li>MatrixNet is an implementation of gradient boosted decision trees algorithm</li>
+    <li>MatrixNet is bit different from standard
+      <ul>
+        <li>Using Oblivious Trees</li>
+        <li>Accounting for sample count in each leaf</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>라고 설명하고 있습니다.</p>
+
+<p>하지만 저의 짧은 식견으로는 정확히 이해할 수 없었기 때문에 설명은 다음에 기회가 된다면 해보도록 하고, 다시 논문내용으로 복귀하겠습니다.</p>
+
+<p>MatrixNet의 발표 ppt 는 해당 링크에서 확인할 수 있습니다. - http://www.slideshare.net/yandex/matrixnet. <br />
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664104-aaffa673-578c-405e-9a00-833057987093.JPG" alt="결과 1" /></p>
+
+<p>모델을 수행하고 threshold를 지정함에 있어서 다음과 같은 방식을 수행하였습니다.</p>
+
+<p>우선 jaccard score가 최대가 되는 $ \alpha_{i} $를 설정합니다.</p>
+
+<p>이후 $ \alpha_{p} $ 를 설정합니다. <br />
+<br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/150664106-0497b105-99b8-4331-a713-7e3692dadb69.JPG" alt="결과 2" /></p>
+
+<p>최종적으로 모델 학습시간에는 12시간이 소요되었고, 초당 4000개의 로그를 예측할 수 있다고 설명하였습니다.</p>
+
+<p>Validation set 에 대해서는 Precision (살 것이라고 예측한 세션 중 맞춘 비율) 16%, Recall (실제 구매 세션 중 검출 비율) 77%, AUC 0.85, jaccard measure 0.765 의 성능을 나타내었음을 설명하였습니다. <br />
+<br /><br /></p>
+
+<p>2015년에 진행된 대회는 Negative에 대한 예측을 score에 반영하지 않는 모습과 예측 데이터셋의 동일한 시간 분포를 통해 대회가 추구하는 서비스의 추천 방향에 대한 의문이 들었습니다.</p>
+
+<p>아무래도 7년이 지난 지금에서야 살펴보는 내용이기 때문에 차이가 많이 나는 부분이 존재할 수 밖에 없다는 점을 알 수 있었고,</p>
+
+<p>제가 지금 공부하는 내용도 나중에는 결국 당연하지 못한 내용으로 구분 지어질 수 있다는 점을 항상 생각하며, 보다 넓은 시야를 통해 스스로를 되돌아 보는 태도를 지녀야 할 것으로 생각이 들었습니다.</p>
+
+<p>긴 글 읽어 주셔서 감사합니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#ml" class="page__taxonomy-item-tag" rel="tag">ML</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ai" class="page__taxonomy-item p-category" rel="tag">AI</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업로드:</strong> <time class="dt-published" datetime="2022-01-12T00:00:00+09:00">2022-01-12</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/ai/MeLU/" class="pagination--pager" title="MeLU: Meta-Learned User Preference Estimator for Cold-Start Recommendation 논문 정리
+">이전</a>
+    
+    
+      <a href="/ai/SR/" class="pagination--pager" title="SR 기반 모델 생성
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 조민규. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+extensions: ["tex2jax.js"],
+jax: ["input/TeX", "output/HTML-CSS"],
+TeX: {
+  equationNumbers: {
+    autoNumber: "AMS"
+  }
+},
+tex2jax: {
+inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+processEscapes: true
+},
+"HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+  </body>
+</html>
