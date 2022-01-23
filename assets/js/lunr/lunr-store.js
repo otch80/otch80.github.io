@@ -6,7 +6,7 @@ var store = [{
         "teaser": null
       },{
         "title": "DarkSeoul 분석",
-        "excerpt":" ","categories": ["AI"],
+        "excerpt":"작성예정  ","categories": ["AI"],
         "tags": ["ML"],
         "url": "/ai/DarkSeoul/",
         "teaser": null
@@ -15,12 +15,6 @@ var store = [{
         "excerpt":"작성 예정  ","categories": ["AI"],
         "tags": ["ML"],
         "url": "/ai/MeLU/",
-        "teaser": null
-      },{
-        "title": "RecSys Challenge 2015: ensemble learning with categorical features 리뷰",
-        "excerpt":"Yandex Data Factory 소속인 Peter Romov, Evgeny Sokolov가 작성한 대회논문 RecSys Challenge 2015: ensemble learning with categorical features를 기반으로 Recsys Challenge 2015를 공부해보려 합니다. 해당 팀은 최종 score 63,102 으로 전체 1위에 랭크하였으며, 2위 와는 약 2,000 점의 점수 차이를 나타내었습니다. 우선 2015년에 개최된 recsys challenge에 대해 개인적으로 분석한 내용을...","categories": ["IRLAB"],
-        "tags": ["ML"],
-        "url": "/irlab/Recsys-challenge-2015/",
         "teaser": null
       },{
         "title": "SR 기반 모델 생성",
@@ -36,7 +30,13 @@ var store = [{
         "teaser": null
       },{
         "title": null,
-        "excerpt":"회귀 모델을 평가하는 방법으로는 MSE, MAE,RMSE 등 실제 값과 예측 값 사이의 오차를 활용하여 측정하는 다양한 방법이 존재합니다.   그렇다면 분류 모델을 평가하기 위한 방법으로는 어떤 것이 있을지 살펴보겠습니다.   1. Confusion Matrix  ㄷ  ","categories": [],
+        "excerpt":"Yandex Data Factory 소속인 Peter Romov, Evgeny Sokolov가 작성한 대회논문 RecSys Challenge 2015: ensemble learning with categorical features를 기반으로 Recsys Challenge 2015를 공부해보려 합니다. 해당 팀은 최종 score 63,102 으로 전체 1위에 랭크하였으며, 2위 와는 약 2,000 점의 점수 차이를 나타내었습니다. 우선 2015년에 개최된 recsys challenge에 대해 개인적으로 분석한 내용을...","categories": [],
+        "tags": null,
+        "url": "/2022-01-12-Recsys-challenge-2015/",
+        "teaser": null
+      },{
+        "title": null,
+        "excerpt":"회귀 모델을 평가하는 방법으로는 MSE, MAE,RMSE 등 실제 값과 예측 값 사이의 오차를 활용하여 측정하는 다양한 방법이 존재합니다.   그렇다면 분류 모델을 평가하기 위한 방법으로는 어떤 것이 있을지 살펴보겠습니다.   1. Confusion Matrix  ","categories": [],
         "tags": null,
         "url": "/2022-01-20-confusion-matrix/",
         "teaser": null
