@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>카테고리 - 상황정리</title>
-<meta name="description" content="추천시스템을 공부하는 중입니다">
+<!-- begin _includes/seo.html --><title>TP/TN/FP/FN 분류 모델 성능 평가 - 상황정리</title>
+<meta name="description" content="회귀 모델을 평가하는 방법으로는 MSE, MAE,RMSE 등 실제 값과 예측 값 사이의 오차를 활용하여 측정하는 다양한 방법이 존재합니다.  그렇다면 분류 모델을 평가하기 위한 방법으로는 어떤 것이 있을지 살펴보겠습니다.">
 
 
   <meta name="author" content="조민규">
   
+  <meta property="article:author" content="조민규">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="상황정리">
-<meta property="og:title" content="카테고리">
-<meta property="og:url" content="https://otch80.github.io/categories/">
+<meta property="og:title" content="TP/TN/FP/FN 분류 모델 성능 평가">
+<meta property="og:url" content="https://otch80.github.io/recommend%20system/confusion-matrix/">
 
 
-  <meta property="og:description" content="추천시스템을 공부하는 중입니다">
-
-
-
+  <meta property="og:description" content="회귀 모델을 평가하는 방법으로는 MSE, MAE,RMSE 등 실제 값과 예측 값 사이의 오차를 활용하여 측정하는 다양한 방법이 존재합니다.  그렇다면 분류 모델을 평가하기 위한 방법으로는 어떤 것이 있을지 살펴보겠습니다.">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2022-01-20T00:00:00+09:00">
 
 
 
@@ -41,7 +45,7 @@
   
 
 
-<link rel="canonical" href="https://otch80.github.io/categories/">
+<link rel="canonical" href="https://otch80.github.io/recommend%20system/confusion-matrix/">
 
 
 
@@ -90,7 +94,7 @@
 
   </head>
 
-  <body class="layout--categories">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -292,161 +296,106 @@
 
 
 
-  <div class="archive">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TP/TN/FP/FN 분류 모델 성능 평가">
+    <meta itemprop="description" content="회귀 모델을 평가하는 방법으로는 MSE, MAE,RMSE 등 실제 값과 예측 값 사이의 오차를 활용하여 측정하는 다양한 방법이 존재합니다. 그렇다면 분류 모델을 평가하기 위한 방법으로는 어떤 것이 있을지 살펴보겠습니다.">
+    <meta itemprop="datePublished" content="2022-01-20T00:00:00+09:00">
     
-      <h1 id="page-title" class="page__title">카테고리</h1>
-    
-    
 
-
-
-
-
-<ul class="taxonomy__index">
-  
-    
+    <div class="page__inner-wrap">
       
-        <li>
-          <a href="#recommend-system">
-            <strong>recommend system</strong> <span class="taxonomy__count">3</span>
-          </a>
-        </li>
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-</ul>
-
-
-
-  
-    
-      <section id="recommend-system" class="taxonomy__section">
-        <h2 class="archive__subtitle">recommend system</h2>
-        <div class="entries-list">
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://otch80.github.io/recommend%20system/confusion-matrix/" class="u-url" itemprop="url">TP/TN/FP/FN 분류 모델 성능 평가
+</a>
+          </h1>
           
-            
 
 
+        </header>
+      
 
-<div class="list__item">
-    <article class="archive-item">
-        <div>
-            <span>
-              <a href="/recommend%20system/Recsys-challenge-2015/">RecSys Challenge 2015: ensemble learning with categorical features 리뷰</a>
-            </span>
-            <small> 
-              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.23
-              <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
+      <section class="page__content e-content" itemprop="text">
         
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#recommend-system" class="page__taxonomy-item p-category" rel="tag">recommend system</a>
-                    
-                    
-                    <a href="/tags/#recsys-challenge" class="page__taxonomy-item p-tag" rel="tag">recsys challenge</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0" class="page__taxonomy-item p-tag" rel="tag">논문리뷰</a>
-                
-            </span>
-        </span>
-            </small>
-        </div>
-      </article>
-</div>
+        <p>회귀 모델을 평가하는 방법으로는 MSE, MAE,RMSE 등 실제 값과 예측 값 사이의 오차를 활용하여 측정하는 다양한 방법이 존재합니다. <br />
+그렇다면 분류 모델을 평가하기 위한 방법으로는 어떤 것이 있을지 살펴보겠습니다.</p>
 
-          
-            
+<h1 id="1-confusion-matrix">1. Confusion Matrix</h1>
 
-
-
-<div class="list__item">
-    <article class="archive-item">
-        <div>
-            <span>
-              <a href="/recommend%20system/confusion-matrix/">TP/TN/FP/FN 분류 모델 성능 평가</a>
-            </span>
-            <small> 
-              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.20
-              <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
         
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#recommend-system" class="page__taxonomy-item p-category" rel="tag">recommend system</a>
-                    
-                    
-                    <a href="/tags/#classifier" class="page__taxonomy-item p-tag" rel="tag">Classifier</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#%EC%84%B1%EB%8A%A5%ED%8F%89%EA%B0%80" class="page__taxonomy-item p-tag" rel="tag">성능평가</a>
-                
-            </span>
-        </span>
-            </small>
-        </div>
-      </article>
-</div>
-
-          
-            
-
-
-
-<div class="list__item">
-    <article class="archive-item">
-        <div>
-            <span>
-              <a href="/recommend%20system/AMNN/">AMNN : Attention-Based Multimodal Neural Network Model for Hashtag Recommendation 논문 정리</a>
-            </span>
-            <small> 
-              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.12
-              <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-        
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#recommend-system" class="page__taxonomy-item p-category" rel="tag">recommend system</a>
-                    
-                    
-                    <a href="/tags/#attention-mechanism" class="page__taxonomy-item p-tag" rel="tag">Attention Mechanism</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0" class="page__taxonomy-item p-tag" rel="tag">논문리뷰</a>
-                
-            </span>
-        </span>
-            </small>
-        </div>
-      </article>
-</div>
-
-          
-        </div>
-        <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
       </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
     
-  
-
-  
+      
+      
+      <a href="/tags/#%EC%84%B1%EB%8A%A5%ED%8F%89%EA%B0%80" class="page__taxonomy-item-tag" rel="tag">성능평가</a><span class="sep"> </span>
     
-  
-
-  
+      
+      
+      <a href="/tags/#classifier" class="page__taxonomy-item-tag" rel="tag">Classifier</a>
     
+    </span>
+  </p>
+
+
+
+
   
 
 
-  </div>
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#recommend-system" class="page__taxonomy-item p-category" rel="tag">recommend system</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업로드:</strong> <time class="dt-published" datetime="2022-01-20T00:00:00+09:00">2022-01-20</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/recommend%20system/AMNN/" class="pagination--pager" title="AMNN : Attention-Based Multimodal Neural Network Model for Hashtag Recommendation 논문 정리
+">이전</a>
+    
+    
+      <a href="/recommend%20system/Recsys-challenge-2015/" class="pagination--pager" title="RecSys Challenge 2015: ensemble learning with categorical features 리뷰
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
 </div>
     </div>
 
