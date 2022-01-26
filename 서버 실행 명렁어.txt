@@ -1,0 +1,6 @@
+bundle exec jekyll serve
+-> serve로 하면 로컬에서 보는 용도라서 무조건 그렇게 링크가 만들어짐
+
+
+bundle exec jekyll build 
+-> push 할 때 serve끄고 build로 만들어서 올려야함
