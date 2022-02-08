@@ -1,0 +1,871 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>AMNN을 활용한 맞춤형 여행지 추천 서비스 - 상황정리</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="조민규">
+  
+  <meta property="article:author" content="조민규">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="상황정리">
+<meta property="og:title" content="AMNN을 활용한 맞춤형 여행지 추천 서비스">
+<meta property="og:url" content="https://otch80.github.io/recommend%20system/%EC%97%AC%ED%96%89%EC%A7%80%EC%B6%94%EC%B2%9C/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-01-12T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://otch80.github.io/recommend%20system/%EC%97%AC%ED%96%89%EC%A7%80%EC%B6%94%EC%B2%9C/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "조민규",
+      "url": "https://otch80.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          상황정리
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about">About</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://otch80.github.io/">
+        <img src="/assets/images/profile.jpg" alt="조민규" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://otch80.github.io/" itemprop="url">조민규</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>minkk1224@gmail.com</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Dong-A University</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/otch80" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.instagram.com/i_min13/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+
+    
+  
+    <!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <ul>
+      <li>
+            <a href="/categories/" class="">전체(2)</a>
+      </li>
+      </ul>
+      <li>
+        <span class="nav__sub-title"> 연구실 </span>
+            <ul>
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                        <li><a href="/categories/IRLAB" class=""> 추천시스템 (2)</a></li>
+                    
+                
+            </ul>
+      </li>
+
+  </ul>
+</nav>
+
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="AMNN을 활용한 맞춤형 여행지 추천 서비스">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-01-12T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://otch80.github.io/recommend%20system/%EC%97%AC%ED%96%89%EC%A7%80%EC%B6%94%EC%B2%9C/" class="u-url" itemprop="url">AMNN을 활용한 맞춤형 여행지 추천 서비스
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p><br /></p>
+
+<p>안녕하세요 이번에는 AMNN 모델을 활용해서 제작한 여행지 추천 서비스에 대한 전반적인 설명과 프로젝트 진행하며 다루었던 여러 이슈들에 대해 포스팅해보려 합니다.</p>
+
+<p><br /></p>
+
+<h1 id="서비스-주제">서비스 주제</h1>
+<blockquote>
+  <p>사용자 맞춤형 여행지 추천 서비스</p>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="소개">소개</h1>
+<blockquote>
+  <p>초기 화면</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152745653-13504368-d741-4517-a4a1-f0a17b150c27.png" alt="서비스 화면" /></p>
+
+<p>서비스 진입 시 볼 수 있는 화면입니다</p>
+
+<p>“당신이 선택한 사진을 통해 성공적인 여행을 책임진다” 는 뜻의 Picture + Victory 를 합친 저희 프로젝트 팀명 PicTory를 보실 수 있습니다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>서비스 설명</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152745651-ff26fba9-630d-4945-99eb-e2053bc1f834.png" alt="서비스 설명" /></p>
+
+<p>페이지를 내리게 되면 저희 서비스를 소개하는 화면을 보실 수 있는데요,</p>
+
+<p>사용자가 선택한 3장의 여행지 이미지만을 통해서 맞춤형 국내 관광지를 추천하는 서비스를 설명하고 있습니다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>관광지 사진</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152745643-4c253f16-c317-410e-811f-359e09ac40dd.png" alt="관광지 사진" /></p>
+
+<p>저희가 제공하는 관광지의 예시를 몇개 보실 수 있습니다.</p>
+
+<p>위치와 관광지 관련 정보를 확인 할 수 있습니다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>관광지 소개</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152745647-fd829901-6761-4e86-858c-9d66a2e46475.png" alt="관광지 소개" /></p>
+
+<p>이미지나 텍스트를 클릭하게 되면 해당 카카오맵 API를 통해 해당 지역의 실제 위치를 확인할 수 있습니다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>사용자 클릭</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152745649-535d0193-1fb4-4cf1-8556-cb208ce95d8d.png" alt="사용자 클릭" /></p>
+
+<p>간단한 회원가입 후 로그인을 한 상태에서, 초기 화면의 ‘들어가기’ 버튼을 누르면 총 6장의 관광지 사진을 볼 수 있습니다.</p>
+
+<p>사진 선택 과정을 총 3번 진행하게 되며, 상태바를 통해 진행상황을 확인할 수 있습니다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>여행지 추천</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152745656-8d1cffe7-cfb6-4a54-b956-a72b0ec07d77.png" alt="여행지 추천" /></p>
+
+<p>총 18장의 사진 중에서 3장을 선택하는 과정을 통해 사용자의 취향을 파악하여 좋아할 것으로 생각되는 여행지 3곳을 추천해줍니다.</p>
+
+<p>추천 결과가 마음에 들었는지 평가할 수 있는 버튼도 준비해두었습니다.</p>
+
+<p><br /></p>
+
+<p>서비스를 구현하기 위해 사용한 기술을 설명하겠습니다.</p>
+
+<p><br /></p>
+
+<h1 id="추천-모델">추천 모델</h1>
+<blockquote>
+  <p>AMNN (Attention-Based Multimodal Neural Network Model for Hashtag Recommendation)</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>해당 모델은 2020년 IEEE에 publish된 논문 내용으로 Qi Yang, Gaosheng Wu, Yuhua Li, Ruixuan Li, Xiwu Gu, Huicai Deng, and Junzhuang Wu 등 7명의 저자가 작성하였습니다.</p>
+
+<p>혹시나 논문의 자세한 내용이 궁금하실 분들을 위해 DOI 남겨두겠습니다.</p>
+
+<ul>
+  <li>link : <a href="https://doi.org/10.1109/TCSS.2020.2986778"> 10.1109/TCSS.2020.2986778 </a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="amnn-간단-설명">AMNN 간단 설명</h2>
+
+<blockquote>
+  <p>마이크로 블로그 게시글에 적합한 해시태그를 추천하는 모델</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>프로젝트에 사용한 AMNN 모델을 간단하게 설명하자면 이렇습니다.</p>
+
+<p>sns 에 포스팅한 게시글의 사진과 텍스트를 분석해서 맞춤형 해시태그를 추천해주는 모델입니다.</p>
+
+<p>해시태그로 어떻게 여행지를 추천했는지 설명하기에 앞서, 모델을 잠시 설명하고 가겠습니다.</p>
+
+<p><br /></p>
+
+<p>우선 AMNN의 정식 명칭은 Attention-Based Multimodal Neural Network Model 입니다.</p>
+
+<p>여기서 핵심 키워드는 <strong>Attention</strong> 과 <strong>Multimodal</strong> 인데요,</p>
+
+<p><br /></p>
+
+<ul>
+  <li>Attention</li>
+</ul>
+
+<p>Attention 은 쉽게 말해 모델의 성능을 높이기 위해 데이터에서 <strong>집중해야 하는 부분을 강조</strong>하는 방식입니다.</p>
+
+<p>우리가 보통 인스타 피드에 해시태그를 달때 새해 일출사진을 올린다고 가정하면,</p>
+
+<p>#일출, #새해다짐 같은 표현하고싶은 포인트를 말하지 #태양부터_바다까지_그라데이션 이런식으로 불필요한 정보는 넣지 않는다는 점과 동일합니다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>Multimodal</li>
+</ul>
+
+<p>논문에서 말하는 Multimodal이란 쉽게 말해 <strong>여러가지 종류의 데이터를 조합해서 하나의 데이터를 생성</strong>하는 방식입니다.</p>
+
+<p>단순 텍스트 예측을 위해서는 글만 있어도 충분하지만, 해시태그를 유추하기 위해서는 사용자가 표현하고 싶은 내용이 무엇인지 글과 사진을 함께 고려하는 것이 더 효과적일 것입니다.</p>
+
+<p>이런 이유 때문에 이미지, 텍스트 등의 한가지 이상 데이터를 조합해서 사용하는 것입니다.</p>
+
+<p><br /></p>
+
+<p>다음은 논문에서 제시한 모델의 사진입니다.</p>
+
+<p><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152754934-cc33153d-6381-41f2-b4cc-3b02a433aa62.png" alt="AMNN" /></p>
+
+<p>모델에 대한 자세한 내용은 다음 게시글에서 다루기위해 지금은 짧게 설명하겠습니다.</p>
+
+<p>[이미지]</p>
+
+<p>이미지를 입력받아 Convolutional Layer와 LSTM, Attention Layer 를 통과해 <strong>Image features</strong>를 생성합니다.</p>
+
+<p>Convolutional Layer 는 resnet, vgg, inception 등 다양한 레이어가 있지만 이번 프로젝트에서는 <strong>이미지와 텍스트 둘 다 사용한 경우에서 가장 성능이 좋다</strong>고 설명한 <strong>resnet50</strong> 을 사용했습니다.</p>
+
+<p><br /></p>
+
+<p>[텍스트]</p>
+
+<p>게시글을 입력받아 토큰화를 수행한 뒤 LSTM, Attention Layer 를 통과시켜 text feature를 생성합니다.</p>
+
+<p><br /></p>
+
+<p>저자들은 이 두 과정을 Encoder 라고 설명하였습니다.</p>
+
+<p>추출된 두 feature를 <strong>단순 병합</strong> 한 뒤에, 해당 게시글의 해시태그를 <strong>원-핫인코딩</strong> 시켜 <strong>임베딩 벡터</strong>로 변환합니다.</p>
+
+<p>위 과정을 통해 모델에게 “이 게시글에는 이런 해시태그가 달린 다” 라는 것을 학습시킵니다.</p>
+
+<p>저자들은 해당 과정을 Decoder 라고 설명하였습니다.</p>
+
+<p><br /></p>
+
+<h1 id="데이터셋">데이터셋</h1>
+
+<p>이제 모델 동작 과정을 알았으니 어떤 데이터를 사용했는지 설명하겠습니다.</p>
+
+<h2 id="학습-데이터">학습 데이터</h2>
+
+<p>아무래도 해시태그라 하면 <strong>인스타</strong> 혹은 <strong>트위터</strong> 위주로 사용되는 단어로 저자들은 인스타에서 데이터를 수집하였습니다.</p>
+
+<p>수집 데이터를 제공해주고 있지만 <strong>강아지</strong>, <strong>고양이</strong> 같이 여행지와 직접적인 관련이 없는 데이터기 때문에 모델이 제대로 학습을 못할것같다는 생각이 들었습니다.</p>
+
+<p>이를 해결하기 위해 크롤러를 통해 광고를 최대한 제외시킨 약 1만개의 인스타 데이터를 수집하여 학습에 사용했습니다.</p>
+
+<p><br /></p>
+
+<h2 id="성능비교">성능비교</h2>
+
+<p>자체 수집한 데이터로 학습한 모델과 논문의 모델 성능을 비교한 그래프입니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152928200-a331fad8-027b-44e3-94a6-81e19d80722a.png" alt="precision" />
+<img src="https://user-images.githubusercontent.com/48629275/152928205-a9fe2dc5-905e-494b-a81d-8a0070b13c34.png" alt="recall" />
+<img src="https://user-images.githubusercontent.com/48629275/152928207-c9911338-927b-4081-af64-c1317d2e1019.png" alt="accuracy" /></p>
+
+<p>논문과 다른 학습 데이터를 사용한 점을 감안하여 살펴보겠습니다.</p>
+
+<p>논문 모델은 Precision 과 Accuracy 가 조금 더 높은 경향을 보이고, 새로 학습한 모델은 Recall 이 더 높은 값을 나타내고 있습니다.</p>
+
+<p>제가 학습시킨 모델이 실제 해시태그를 더 잘 맞췄지만, 다양하지 못한 해시태그 추천이 이루어진게 아닌가 생각이 들었습니다.</p>
+
+<p><br /></p>
+
+<h2 id="테스트-데이터">테스트 데이터</h2>
+
+<p>비상업적 용도로 서비스를 개발한다고 해도 인스타의 실제 게시글을 서비스에 활용하기엔 법적인 문제가 발생할 위험이 있기 때문에 사용자에게 제공될 항목은 공공데이터를 사용했습니다.</p>
+
+<p>한국관광공사 API를 통해 여행지 사진과 텍스트 약 1만건을 수집하였습니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152928902-4919f8cc-e117-4408-8109-3f0a4799e2b3.png" alt="관광공사API" /></p>
+
+<p>보시는 것 처럼 대표이미지와 관련 텍스트를 제공하고 있기 때문에 모델 학습에 필요한 데이터를 모두 수집할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="여행지-해시태그-추출-결과">여행지 해시태그 추출 결과</h2>
+
+<p>모델이 어떤식으로 해시태그를 추출했는지 실제 예측 결과를 보겠습니다.</p>
+
+<p><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/152929553-8d3e7b28-85ae-4e3a-abaa-64c1b27d246b.png" alt="관광공사_광안리" /></p>
+
+<p><br /></p>
+
+<p>관광공사에서 제공하는 광안리 사진인데요, 확대해서 살펴보면 디테일한 광안리의 모습을 볼 수 있습니다.</p>
+
+<p>이 사진에 모델이 추천하는 해시태그 20개는 다음과 같습니다.</p>
+
+<blockquote>
+  <p>#여행 #여행스타그램 #일상 #여행에미치다 #또가고싶다 #추억팔이 #여행사진 #국내여행 #떠나요 #휴가 #맞팔 #여행중 #소통 #가족여행 #여행추억 #가족스타그램 #여행그램 #travel #좋아요 #감성여행</p>
+</blockquote>
+
+<p>실제 사람이 쓸 것같은 해시태그를 잘 추천한 것으로 볼 수 있습니다.</p>
+
+<p>이런 방식으로 관광공사에서 제공한 데이터에 모두 해시태그를 추출하는 작업을 수행합니다.</p>
+
+<p><br /></p>
+
+<h1 id="맞춤형-여행지-추천">맞춤형 여행지 추천</h1>
+
+<p>그렇다면 여행지에서 추출한 해시태그를 기반으로 어떻게 사용자의 성향을 파악할 것인지가 관건이 됩니다.</p>
+
+<p>이때 저희팀은 총 3번의 시행착오를 거쳤습니다.</p>
+
+<p>우선 클러스터링을 통해 유사한 해시태그를 가지는 여행지를 추천하기로 하였습니다.</p>
+
+<p>해시태그의 중요도를 증명하는 논문도 많이 있기 때문에, 사용자가 말하고자 하는 내용을 해시태그가 함축하여 담고 있을 것으로 판단하였습니다.</p>
+
+<p><br /></p>
+
+<h2 id="클러스터링">클러스터링</h2>
+
+<p>클러스터링에는 여러 종류가 있는데, 우선적으로 저희가 시도한 것은 K-means, k-medoids 클러스터링이었습니다.</p>
+
+<p>하지만 Elbow 방식으로 적절한 k 값을 살펴보았을 때, 눈에뛰게 꺾이는 부분을 찾을 수 없었습니다.</p>
+
+<p><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/153020755-33424e39-c0ec-4b76-8df5-56b827758fff.png" alt="kmeans" />
+<img src="https://user-images.githubusercontent.com/48629275/153020758-105935a6-af6d-4709-8bdf-5198e4ac1d14.png" alt="kmedoids" /></p>
+
+<p><br /></p>
+
+<p>그래서 k-means의 실루엣 계수를 살펴보았는데 최대 0.05를 넘지 않는 모습으로 데이터를 분류하기 어렵다고 판단했습니다.</p>
+
+<p><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/153020746-453c0722-7196-440d-9283-4bdddbe87d5c.png" alt="실루엣 계수" /></p>
+
+<p><br /></p>
+
+<p>그렇다면 bottom-up 방식으로 비슷한 것을 찾는 DBSCAN을 시도했습니다.</p>
+
+<p>하지만 20 차원의 데이터 구분을 제대로 수행하지 못하였습니다.</p>
+
+<p>데이터 차원을 줄이고자 <strong>PCA</strong> 를 통해 차원압축을 시도했지만 큰 효과를 내지 못하는 상황이 발생헀습니다.</p>
+
+<p>예측한 해시태그가 굉장히 겹치는게 많다고 판단하여, 다른 방법을 시도했습니다.</p>
+
+<p><br /></p>
+
+<h2 id="우선순위">우선순위</h2>
+
+<p><br /></p>
+
+<p>다음으로 고려한 추천 방식은 해시태그가 추천된 <strong>우선순위</strong>를 고려하는 것입니다.</p>
+
+<p>모델은 해당 게시글에 해당하는 전체 해시태그 확률을 softmax로 출력하고, 이 중에서 top_k (20개) 만 추출하여 해시태그가 달리게 됩니다.</p>
+
+<p>가장 먼저 추천된 해시태그는 해당 게시글에 가장 적합하다는 뜻이기 때문에, 위치와 해시태그를 동시에 고려는 score를 계산해보았습니다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>[예시]<br />
+사용자 선택 이미지의 해시태그 - [여행, 일상, 여행스타그램, 추억팔이, 감성여행, …]<br />
+비교 대상 이미지의 해시태그 - [여행일기, 강아지, 여행스타그램, 여행그램, 일상, …]<br />
+2개의 해시태그 (‘일상’, ‘여행스타그램’) 만 겹치는 상황</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>예를 들어 다음과 같은 상황이 있다고 가정했을 때, 사용자가 선택한 이미지와 비교 대상 이미지의 유사도는 이렇게 계산됩니다.</p>
+
+<ol>
+  <li>[여행일기, 강아지, 여행스타그램, 여행그램, 일상, …] 중 일치하는 단어가 있는가?
+    <ul>
+      <li>Yes</li>
+    </ul>
+  </li>
+  <li>일치하는 단어의 인덱스는 몇인가?
+    <ul>
+      <li>(1,4), (2,2)</li>
+    </ul>
+  </li>
+</ol>
+
+<p>총 20개의 해시태그가 있기 때문에 첫번째 해시태그가 일치할 경우는 20의 score를 얻게 됩니다.</p>
+
+<p>이때 사용자가 선택한 이미지의 해시태그의 인덱스를 가중치로 곱하여 전체 누적시켜줍니다.</p>
+
+<p>(19 * 16) + (18 * 18) = 628의 score를 가지게 됩니다.</p>
+
+<p>겹치는 해시태그가 없으면 0이 됩니다.</p>
+
+<p><br /></p>
+
+<p>수식으로 표현하면 다음과 같습니다.</p>
+
+\[score(a,b) = \Sigma (a_i * b_j)\]
+
+<p>$
+a : 사용자가 \ 선택한 \ 이미지 \ 해시태그 \ b : 비교 \ 대상 \ 이미지 \ 해시태그 \ a_i : a \ 에서 \ 일치하는 \ 해시태그 \ 인덱스 \ b_j : b \ 에서 \ 일치하는 \ 해스태그 \ 인덱스
+$</p>
+
+<p><br /></p>
+
+<p>사용자가 선택한 이미지가 누적될 수록 score도 계속 누적이 됩니다.</p>
+
+<p>하지만 실제 추천을 해보니 바다를 중점적으로 골랐음에도 불구하고 절을 추천한다거나, 도서관을 추천하는 등 관계성을 찾기 힘든 여행지를 추천해줘서 다른 방법이 필요하다고 생각했습니다.</p>
+
+<p><br /></p>
+
+<h2 id="content-based-filltering">Content-based Filltering</h2>
+
+<p><br /></p>
+
+<p>해시태그의 우선순위가 크게 중요하지 않는다면 이미지가 가지고 있는 태그만 비교해서 유사한 항목을 추천하는 방식을 사용해보았습니다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>유사도 측정 방식 : Cosine similarity</li>
+</ul>
+
+<p><br /></p>
+
+<p>마찬가지로 사용자의 클릭이 다음 예측에도 영향을 미쳐야하기 때문에 유사도 역시 누적시켰습니다.</p>
+
+<p>모델이 추천한 여행지 목록을 간단하게 보여드리겠습니다.</p>
+
+<p><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/48629275/153027495-50d2733a-4b8f-48dd-ba98-7ff3ad787278.JPG" alt="슬라이드3" />
+<img src="https://user-images.githubusercontent.com/48629275/153027498-bf8befa9-2b80-473f-ba7b-ea7df9f7ac76.JPG" alt="슬라이드4" />
+<img src="https://user-images.githubusercontent.com/48629275/153027502-7be2f194-f9b6-442b-9a35-fe19e7c410c0.JPG" alt="슬라이드5" /></p>
+
+<p><br /></p>
+
+<p>1차 선택 이후 3차 선택까지는 나름 일관성이 있게 물놀이와 관련된 여행지를 추천해주었습니다.</p>
+
+<p>하지만 최종 여행지 추천에 있어 삐끗하는 모습을 보이고 있습니다.</p>
+
+<p>제한된 데이터가 문제인지 아니면 해시태그가 가지는 한계점인지, 모델이 제대로된 해시태그를 추천하지 못하였는지 추측되는 부분들은 많았지만 정확한 문제점을 정의할 수 없었습니다.</p>
+
+<p><br /></p>
+
+<h1 id="평가">평가</h1>
+
+<p>추천한 여행지에 대한 정답여부를 알 수 없기 때문에 일반적인 성능평가 방식은 적용하기 어려웠습니다.</p>
+
+<p>그래서 저희는 무작위 사용자 50명을 대상으로 서비스 이용 만족도 조사를 실시하였습니다.</p>
+
+<p>전체 사용자의 70% 가 여행지 추천 결과에 대한 만족스럽다는 평가를 해주었습니다.</p>
+
+<p>아직 서비스가 완전한 상태가 아니기 때문에 AB 테스트를 진행하기엔 어려움이 있고, 대체로 사람들이 후한 점수를 주었을 것이라는 점도 배제할 수 없기 때문에 향후 발전방향에 대해서는 지속적인 논의가 필요할 것으로 생각됩니다.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#amnn" class="page__taxonomy-item-tag" rel="tag">AMNN</a><span class="sep"> </span>
+    
+      
+      
+      <a href="/tags/#%EA%B0%9C%EC%9D%B8%ED%99%94-%EC%8B%9C%EC%8A%A4%ED%85%9C" class="page__taxonomy-item-tag" rel="tag">개인화 시스템</a><span class="sep"> </span>
+    
+      
+      
+      <a href="/tags/#%EC%B6%94%EC%B2%9C-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" class="page__taxonomy-item-tag" rel="tag">추천 알고리즘</a><span class="sep"> </span>
+    
+      
+      
+      <a href="/tags/#%EC%97%AC%ED%96%89%EC%A7%80-%EC%B6%94%EC%B2%9C" class="page__taxonomy-item-tag" rel="tag">여행지 추천</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#recommend-system" class="page__taxonomy-item p-category" rel="tag">recommend system</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업로드:</strong> <time class="dt-published" datetime="2022-01-12T00:00:00+09:00">2022-01-12</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">이전</a>
+    
+    
+      <a href="/recommend%20system/Recsys-challenge-2015/" class="pagination--pager" title="RecSys Challenge 2015: ensemble learning with categorical features 리뷰
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 조민규. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+extensions: ["tex2jax.js"],
+jax: ["input/TeX", "output/HTML-CSS"],
+TeX: {
+  equationNumbers: {
+    autoNumber: "AMS"
+  }
+},
+tex2jax: {
+inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+processEscapes: true
+},
+"HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+  </body>
+</html>
