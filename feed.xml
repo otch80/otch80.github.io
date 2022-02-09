@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://otch80.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://otch80.github.io/" rel="alternate" type="text/html" /><updated>2022-02-09T15:58:24+09:00</updated><id>https://otch80.github.io/feed.xml</id><title type="html">상황정리</title><subtitle>추천시스템을 공부하는 중입니다</subtitle><author><name>조민규</name></author><entry><title type="html">RecSys Challenge 2015: ensemble learning with categorical features 리뷰</title><link href="https://otch80.github.io/recommend%20system/Recsys-challenge-2015/" rel="alternate" type="text/html" title="RecSys Challenge 2015: ensemble learning with categorical features 리뷰" /><published>2022-01-23T00:00:00+09:00</published><updated>2022-01-23T00:00:00+09:00</updated><id>https://otch80.github.io/recommend%20system/Recsys%20challenge%202015</id><content type="html" xml:base="https://otch80.github.io/recommend%20system/Recsys-challenge-2015/"><![CDATA[<p><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://otch80.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://otch80.github.io/" rel="alternate" type="text/html" /><updated>2022-02-09T17:17:11+09:00</updated><id>https://otch80.github.io/feed.xml</id><title type="html">상황정리</title><subtitle>추천시스템을 공부하는 중입니다</subtitle><author><name>조민규</name></author><entry><title type="html">RecSys Challenge 2015: ensemble learning with categorical features 리뷰</title><link href="https://otch80.github.io/recommend%20system/Recsys-challenge-2015/" rel="alternate" type="text/html" title="RecSys Challenge 2015: ensemble learning with categorical features 리뷰" /><published>2022-01-23T00:00:00+09:00</published><updated>2022-01-23T00:00:00+09:00</updated><id>https://otch80.github.io/recommend%20system/Recsys%20challenge%202015</id><content type="html" xml:base="https://otch80.github.io/recommend%20system/Recsys-challenge-2015/"><![CDATA[<p><br /></p>
 
 <p>Yandex Data Factory 소속인 Peter Romov, Evgeny Sokolov가 작성한 대회논문 RecSys Challenge 2015: ensemble learning with categorical features를 기반으로 Recsys Challenge 2015를 공부해보려 합니다.</p>
 
@@ -643,9 +643,9 @@ yoochoose-test.dat - 예측해야 하는 클릭 로그입니다.</p>
 
 <p><br /></p>
 
-<p><img src="https://user-images.githubusercontent.com/48629275/153027495-50d2733a-4b8f-48dd-ba98-7ff3ad787278.JPG" alt="슬라이드3" />
-<img src="https://user-images.githubusercontent.com/48629275/153027498-bf8befa9-2b80-473f-ba7b-ea7df9f7ac76.JPG" alt="슬라이드4" />
-<img src="https://user-images.githubusercontent.com/48629275/153027502-7be2f194-f9b6-442b-9a35-fe19e7c410c0.JPG" alt="슬라이드5" /></p>
+<p><img src="https://user-images.githubusercontent.com/48629275/153153757-c9a142a5-930a-4bbe-8532-e68b9956be7d.JPG" alt="추천결과1" />
+<img src="https://user-images.githubusercontent.com/48629275/153153764-935f1b9b-7b42-431e-8f8c-24b770247b10.JPG" alt="추천결과2" />
+<img src="https://user-images.githubusercontent.com/48629275/153153765-762aa824-ef5c-42d8-b236-d19a70d10295.JPG" alt="추천결과3" /></p>
 
 <p><br /></p>
 
