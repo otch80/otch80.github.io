@@ -4,6 +4,22 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://otch80.github.io/recommend%20system/PICTORY/</loc>
+        
+        <lastmod>2023-03-19T00:00:00-05:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://otch80.github.io/recommend%20system/Recsys-challenge-2015/</loc>
         
         <lastmod>2022-01-23T00:00:00-06:00</lastmod>

@@ -10,4 +10,10 @@ var store = [{
         "tags": ["논문리뷰","recsys challenge"],
         "url": "/recommend%20system/Recsys-challenge-2015/",
         "teaser": null
+      },{
+        "title": "맞춤형 여행지 추천 서비스 Part.2",
+        "excerpt":"test  ","categories": ["recommend system"],
+        "tags": ["MAB","UCB","여행지 추천","개인화 시스템","AMNN","추천 알고리즘"],
+        "url": "/recommend%20system/PICTORY/",
+        "teaser": null
       }]
