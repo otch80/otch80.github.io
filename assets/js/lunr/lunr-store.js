@@ -11,9 +11,9 @@ var store = [{
         "url": "/recommend%20system/Recsys-challenge-2015/",
         "teaser": null
       },{
-        "title": "맞춤형 여행지 추천 서비스 Part.2",
-        "excerpt":"test  ","categories": ["recommend system"],
+        "title": "MAB 기반 맞춤형 여행지 추천 서비스 (Part.2)",
+        "excerpt":"정식오픈! [접속링크] http://pictor2.o-r.kr/ ![메인화면] 이전 버전 대비 개선점 이전 여행지 추천 방식은 Contents-Based로 유사 아이템을 추천해주는 방식으로 운영했습니다. 하지만 이는 크게 3가지 문제점을 가지고 있습니다. item의 feature가 적절하게 수치로 표현되었는지 확인이 필요함 사용자 개인 성향이 반영되지 않음 사용자가 선택한 아이템과 유사 범위에서 추천이 반복될 수 있음 문제상황을 크게 사용 데이터에...","categories": ["recommend system"],
         "tags": ["MAB","UCB","여행지 추천","개인화 시스템","AMNN","추천 알고리즘"],
-        "url": "/recommend%20system/PICTORY/",
+        "url": "/recommend%20system/%EC%97%AC%ED%96%89%EC%A7%80%EC%B6%94%EC%B2%9C-UCB/",
         "teaser": null
       }]
